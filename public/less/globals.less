@@ -1,0 +1,31 @@
+@import "./navbar.less";
+@import "./footer.less";
+
+@import "./home.less";
+
+:root {
+  --main-pug-color: rgba(239, 204, 163, 1);
+  --main-font-color: rgba(54, 54, 54, 1);
+  --main-font-description-color: rgb(73, 73, 73);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  background-color: var(--main-pug-color);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+}

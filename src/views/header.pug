@@ -1,0 +1,9 @@
+nav#nav
+  .navbar-wrapper
+    h1.navbar-logo
+      a(href="/") PUG Template
+    ul.navbar-menu
+      - const items = [{ label: "Docs", href: "https://pugjs.org/" }, { label: 'GitHub', href: 'https://github.com/jiwooproity' }];
+      each item in items
+        li.navbar-menu-item
+          a(href=item.href, target="_blank")= item.label

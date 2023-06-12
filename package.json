@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pug ./src/index.pug"
+    "start": "nodemon ./src/main.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,8 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@prettier/plugin-pug": "^2.5.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
   }
 }

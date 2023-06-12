@@ -1,9 +1,33 @@
-html
-    head
-        link(rel="stylesheet" type="text/css" href="globals.css")
-    body 
-        h1 User profile page
-        //- div=msg
-        h2 Nickname
-        div.green= nickname
-        include ./footer.pug
+html(lang="en")
+  head
+    title 퍼그를 활용한 웹 페이지 만들기
+    link(rel="stylesheet", type="text/css", href="globals.less")
+    link(
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap",
+      rel="stylesheet"
+    )
+    script(type="text/javascript").
+      const onScroll = () => {
+        const navbar = document.getElementById("nav");
+        const scrollTop = window.scrollY;
+
+        if (scrollTop > 0) {
+          navbar.classList.add("scrolling");
+        } else {
+          navbar.classList.remove("scrolling");
+        }
+      };
+
+      document.addEventListener("scroll", onScroll);
+  body
+    .main-container
+      include ./header.pug
+      .home-container
+        .home-innerwrapper
+          .pug-icon-title-container
+            .pug-icon-wrapper
+              .pug-icon
+            .pug-title-wrapper
+              h1.pug-title PUG Template Engine
+              span.pug-description JavaScript를 사용하여, HTML을 렌더링해주는 템플릿 엔진입니다.
+  include ./footer.pug
