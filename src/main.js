@@ -1,5 +1,4 @@
 const path = require("path");
-// less 스타일시트 언어 컴파일
 const lessMiddleware = require("less-middleware");
 
 const express = require("express");
@@ -11,18 +10,18 @@ app.set("views", path.resolve(__dirname, "./views"));
 app.set("view engine", "pug");
 
 // 정적 디렉토리 제공
-app.use(lessMiddleware(path.resolve(__dirname, "./styles")));
-app.use(express.static(path.resolve(__dirname, "./styles")));
+app.use(lessMiddleware(path.resolve("./public/less")));
+app.use(express.static(path.resolve("./public/less")));
 
-app.get("/artist", (req, res) => {
-  let { group, description, songs } = req.query;
-  songs = songs.split(",");
-  res.render("group", { group, description, songs });
+// 정적 디렉토리 제공 ( 이미지 등 .. )
+app.use(express.static(path.resolve("./public")));
+
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
-app.get("/:nickname", (req, res) => {
-  const { nickname } = req.params;
-  res.render("index", { nickname });
-});
+// app.get("/home", (req, res) => {
+//   res.render("home");
+// });
 
 app.listen(port);
